@@ -1,0 +1,9 @@
+#!/bin/bash
+#Küsib kasutaja ees- ja perenime
+
+
+
+
+echo –n “Sisesta oma ees- ja perenimi: ”
+read eesnimi perenimi
+echo “Sinu eesnimi on $eesnimi ja perenimi on $perenimi”
