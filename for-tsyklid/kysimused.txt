@@ -1,0 +1,27 @@
+Milline on for-tsükli põhisüntaks Bashis?
+Bashi for-tsükli põhisüntaks on for muutuja in loend; do käsk; done.
+
+
+Mis vahe on lihtsate väärtuste ja jutumärkides väärtuste vahel tsüklis?
+Tühikuga eraldatud sõnad on eraldi väärtused. Kui paned mitu sõna ühtedesse jutumärkidesse, käsitleb Bash neid ühe väärtusena.
+
+
+Mida teeb käsu asendamine (command substitution) tsüklis? Too näide.
+Käsu asendamine $(...) käivitab käsu ja kasutab selle väljundit tsüklis. Näiteks for user in $(cut -d: -f1 /etc/passwd); do echo "$user"; done väljastab kasutajanimed ükshaaval.
+
+
+Milleks kasutatakse muutujat IFS?
+Muutuja IFS määrab, milliste märkide järgi Bash jutumärkideta laienduse osadeks jagab. Näiteks IFS=',' määrab eraldajaks koma.
+
+
+Miks ei ole soovitatav kasutada for file in $(ls)? Mis on parem lahendus?
+Käsk for file in $(ls) võib tühikutega failinime mitmeks osaks jagada. Parem on kasutada failimustrit, näiteks for file in *.sh; do echo "$file"; done.
+
+
+Kuidas näeb välja C-stiilis for-tsükkel Bashis?
+C-stiilis for-tsüklis määratakse algväärtus, tingimus ja samm, näiteks for (( i=1; i<=5; i++ )); do echo "$i"; done.
+
+
+Kuidas panna C-stiilis tsükkel lugema ainult paarisarve?
+Paarisarvude lugemiseks alusta arvust 2 ja suurenda loendurit igal sammul kahe võrra. Näiteks for (( i=2; i<=10; i+=2 )); do echo "$i"; done väljastab paarisarvud 2 kuni 10.
+
